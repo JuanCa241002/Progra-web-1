@@ -204,36 +204,4 @@ ADD COLUMN Subtotal DECIMAL(10,2);
 ALTER TABLE ItemCatalogo
 ADD COLUMN Descripcion VARCHAR(255),
 ADD COLUMN Precio DECIMAL(10,2);
---
-Insert into Permisos(Nombre,decripcion) 
-values('leer','solo lectura de los datos');
---
-Insert into Proveedor(Nombre,contacto,direccion,email,telefono) 
-values('Andina Forestal SRL','Mauricio SRL','AndinaForestal@gmail.com',63729624);
---
-Insert into Busqueda(FechaBusqueda,TerminoBusqueda)
-values(06-01-2024,'Silla');
---
-Insert into Producto(NombreProducto,descripcion,imagenes,precio)
-values('Silla','silla para esteriores','google.com',500);
---
-insert into Rol(nombre,descripcion)
-values('administrador','lectura y escritura del empleado');
---
-insert into Usuario(Nombre,Apellido,nombreUsuario,contraseña,email)
-values('carlos','ramirez','calosgoku','1234abc','carlosramires@gmail.com');
---
-insert into Vendedor(Area,telefono)
-values('tienda',67530012);
---
-insert into CarritoDeVentas(Descripcion,PrecioTotal,PrecioUnitario)
-values('productos varios',500,'100,100,200,100');
---
-insert into ProcesoDePago(EstadoDeLaTransaccion,FechaPago,MetodoPago,TotalPagado)
-values('Finalizado', 06-01-2024,'QR', 500);
---
-insert into DetalleProducto(Nombre,Precio,Stock,Descripcion)
-values('silla',30, 200, 'silla de exteriores');
---
-
 
