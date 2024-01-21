@@ -1,5 +1,7 @@
 <!--Conectar a la DB_MUEBLESINTI-->
 <?php
+    include("conexion.php");//definir la variable conexion 
+
     $NombreProducto = $_POST['NombreProducto'];
     $descripcion= $_POST['descripcion'];
     $stock = $_POST['stock'];//ojo con este si no lo quero borralo en la BD_dats

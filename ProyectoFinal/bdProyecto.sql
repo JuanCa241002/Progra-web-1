@@ -1,5 +1,5 @@
 CREATE DATABASE db_mueblesinti;
-USE d_mueblesinti;
+USE db_mueblesinti;
 
 CREATE TABLE Permisos (
     id BIGINT PRIMARY KEY AUTO_INCREMENT
@@ -127,8 +127,8 @@ ADD COLUMN TerminoBusqueda date;
 ALTER TABLE Productos
 ADD COLUMN NombreProducto VARCHAR(255),
 ADD COLUMN descripcion VARCHAR(255),
-ADD COLUMN imagenes longblob,
-ADD COLUMN Stock INT,
+ADD COLUMN Imagen longblob,
+ADD COLUMN stock INT,
 ADD COLUMN precioUnitario DECIMAL(10,2);
 
 -- Alter table Rol

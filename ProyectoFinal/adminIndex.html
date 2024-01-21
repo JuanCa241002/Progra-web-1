@@ -7,12 +7,13 @@
 </head>
 <body>
     <!--php para mostrar y trabajar con insertar datos de tipo IMG--> <br><br><br>
-<form action="proceso_guardar.php" method="post" enctype="multipart/form-data"><br><br>  <!--usando metoedo pos-->
-    <input type ="text" name="NombreProducto" placeholder="NombreProducto..." value=""/> <br> <br>
-    <input type ="text" name="descripcion" placeholder="descripcion..." value=""/> <br> <br>
-    <input type ="text" name="stock" placeholder="stock..." value=""/> <br> <br>
-    <input type ="text" name="precioUnitario" placeholder="precioUnitario..." value=""/> <br> <br>
-    <input type ="file" name="Imagen"/> <br> <br>
+<form action="proceso_guardar.php" method="POST" enctype="multipart/form-data"><br><br>  <!--usando metoedo pos-->
+    <input type ="text" required name="NombreProducto" placeholder="NombreProducto..." value=""/> <br> <br>
+    <input type ="text" required name="descripcion" placeholder="descripcion..." value=""/> <br> <br>
+    <input type ="text" required name="stock" placeholder="stock..." value=""/> <br> <br>
+    <input type ="text" required name="precioUnitario" placeholder="precioUnitario..." value=""/> <br> <br>
+    <input type ="file" required name="Imagen"/> <br> <br>
+  <!--required para evitar error de llenado en las celdas--> <br><br>
     <input type ="submit" value="Aceptar">
 </form>
     
