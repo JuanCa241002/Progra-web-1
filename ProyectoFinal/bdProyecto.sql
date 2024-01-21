@@ -1,6 +1,6 @@
-CREATE DATABASE db_MueblesInti;
-USE db_MueblesInti;
-/* este debes actualizar*/
+CREATE DATABASE db_mueblesinti;
+USE d_mueblesinti;
+
 CREATE TABLE Permisos (
     id BIGINT PRIMARY KEY AUTO_INCREMENT
 );
@@ -128,7 +128,8 @@ ALTER TABLE Productos
 ADD COLUMN NombreProducto VARCHAR(255),
 ADD COLUMN descripcion VARCHAR(255),
 ADD COLUMN imagenes longblob,
-ADD COLUMN PrecioUnitario DECIMAL(10,2);
+ADD COLUMN Stock INT,
+ADD COLUMN precioUnitario DECIMAL(10,2);
 
 -- Alter table Rol
 ALTER TABLE Rol
@@ -204,4 +205,51 @@ ADD COLUMN Subtotal DECIMAL(10,2);
 ALTER TABLE ItemCatalogo
 ADD COLUMN Descripcion VARCHAR(255),
 ADD COLUMN Precio DECIMAL(10,2);
-
+--
+Insert into Permisos(Nombre,decripcion) 
+values('leer','solo lectura de los datos');
+--
+Insert into Proveedor(Nombre,contacto,direccion,email,telefono) 
+values('Andina Forestal SRL','Mauricio SRL','AndinaForestal@gmail.com',63729624);
+--
+Insert into Busqueda(FechaBusqueda,TerminoBusqueda)
+values(06-01-2024,06-01-2024);
+--
+Insert into Producto(NombreProducto,descripcion,imagenes,precio)
+values('Silla','silla para esteriores','google.com',500);
+--
+insert into Rol(nombre,descripcion)
+values('administrador','lectura y escritura del empleado');
+--
+insert into Usuario(Nombre,Apellido,nombreUsuario,contraseña,email)
+values('carlos','ramirez','calosgoku','1234abc','carlosramires@gmail.com');
+--
+insert into Vendedor(Area,telefono)
+values('tienda',67530012);
+--
+insert into CarritoDeVentas(Descripcion,PrecioTotal,PrecioUnitario)
+values('productos varios',500,'100,100,200,100');
+--
+insert into ProcesoDePago(EstadoDeLaTransaccion,FechaPago,MetodoPago,TotalPagado)
+values('Finalizado', 06-01-2024,'QR', 500);
+--
+insert into DetalleProducto(Nombre,Precio,Stock,Descripcion)
+values('silla',30, 200, 'silla de exteriores');
+--
+insert into Catalogo(Descripcion,FechaCreacion,Nombre)
+values('sillas de diferente materiales',06-06-2023,'sillas');
+--
+insert into Reseña(Calificacion,Comentario,fecha)
+values('5 estrellas','las silla es muy comoda',06-11-2023);
+--
+insert into Ofertas(FechaInicio,FechaFinalizacion,PorcentajeDescuento)
+values(11-10-2023-11-01-2024-'50%');
+--
+insert into ComprasPorMayor(Cantidad,fecha,proveedor,TotalCompra)
+values('500',11-10-2023,'Andina Forestal SRL', 500);
+--
+insert into DetalleCompra(Cantidad,PrecioUnitario,Producto,Subtotal)
+values (20,40,'sillas','400 doll');
+--
+insert into ItemCatalogo(Descripcion,precio)
+values ('silla',40);
