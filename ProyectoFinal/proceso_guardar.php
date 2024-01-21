@@ -6,10 +6,11 @@
     $precioUnitario = $_POST['precioUnitario'];//ojo con este
     //pedir imagen en bits
     $Imagen = addslashes(file_get_contents($_FILES['Imagen']['tmp_name']));
+    
+    $query = "INSERT INTO Productos(NombreProducto,descripcion,Imagen,stock,precioUnitario) VALUES('$NombreProducto','$descripcion','$Imagen','$stock','$precioUnitario')";
+    $resultado = $conexion->query($query);//ojo con el nombre de la conexion
 
-    $query = "INSERT INTO Productos(NombreProducto, descripcion, imagenes, stock, precioUnitario) VALUES('$NombreProducto','$descripcion','$Imagen','$stock','$precioUnitario')";
-    $resultado = $conexion->query($query);
-   if(resultado){
+    if($resultado){
     echo "insertado";
    }
    else{
