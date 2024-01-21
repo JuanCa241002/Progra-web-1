@@ -1,6 +1,6 @@
-CREATE DATABASE dbMueblesInti;
-USE dbMueblesInti;
-
+CREATE DATABASE db_MueblesInti;
+USE db_MueblesInti;
+/* este debes actualizar*/
 CREATE TABLE Permisos (
     id BIGINT PRIMARY KEY AUTO_INCREMENT
 );
@@ -127,8 +127,8 @@ ADD COLUMN TerminoBusqueda date;
 ALTER TABLE Productos
 ADD COLUMN NombreProducto VARCHAR(255),
 ADD COLUMN descripcion VARCHAR(255),
-ADD COLUMN imagenes TEXT,
-ADD COLUMN precio DECIMAL(10,2);
+ADD COLUMN imagenes longblob,
+ADD COLUMN PrecioUnitario DECIMAL(10,2);
 
 -- Alter table Rol
 ALTER TABLE Rol
