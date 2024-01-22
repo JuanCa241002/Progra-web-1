@@ -43,7 +43,7 @@
                 <td> <img height="200px" src="data:image/jpg;base64,<?php echo base64_encode($row['Imagen']); ?>"/></td>
                 <th> <a href="modificar.php?id=<?php echo $row['id']; ?>">Modificar</a> </th>
                 <th> <a href="eliminar.php?id=<?php echo $row['id']; ?>">Eliminar </a></th>
-                <th> <a href="modificar.php?id=<?php echo $row['id']; ?>">comprar</a> </th>
+                <th> <a href="modificar.php?id=<?php echo $row['id']; ?>">agregar al carrito</a> </th>
 
             </tr>
             <?php    
