@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    [16:33] carlos eduardo crespo mamani
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <title>mostrar productos insertados</title>
+
 </head>
 
 <body>
 
-    <table border="2">
+    <table class="table" border="2">
         <thead>
             <!--avajo para nueva accion--> 
             <tr>
