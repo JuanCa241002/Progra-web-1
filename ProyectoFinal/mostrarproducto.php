@@ -8,10 +8,57 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <title>mostrar productos insertados</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
 
 </head>
 
 <body>
+     <!--Inicio de la barra de navegacion-->
+  <div class="b-example-divider"></div>
+
+<header class="p-3 text-bg-dark">
+  <div class="container">
+
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+          <use xlink:href="#bootstrap" />
+        </svg>
+        <!--Inicio del logotipo-->
+        <a class="navbar-brand" href="index.html">
+          <img src="img/logotipo.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+          Inicio
+        </a>
+        <!--Fin del logotipo--></a>
+--
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">Reseña</a></li>
+        <li><a href="oferta.html" class="nav-link px-2 text-white">Oferta</a></li>
+        <li><a href="Catalogo.html" class="nav-link px-2 text-white">Catalogo</a></li>
+        <li><a href="filtrado.html" class="nav-link px-2 text-white">Filtrar</a></li>
+        <li><a href="adminIndex.html" class="nav-link px-2 text-white">ADMINISTRADOR</a></li>
+        <li><a href="mostrarproducto.php" class="nav-link px-2 text-white"> CATALOGO</a></li>
+      
+      </ul>
+
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+        <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
+          aria-label="Search">
+      </form>
+
+      <div class="text-end">
+        <a href="login.html" class="btn btn-outline-light me-2">Login</a>
+        <button type="button" class="btn btn-warning">Sign-up</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!--fin de la barra de navegacion-->
+
 
     <table class="table" border="2">
         <thead>
@@ -57,6 +104,12 @@
         </tbody>
 
     </table>
+
+     <!--avajo enlace para framework boostrap-->
+  <script src="js/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
