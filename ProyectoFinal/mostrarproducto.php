@@ -15,8 +15,8 @@
 </head>
 
 <body>
-     <!--Inicio de la barra de navegacion-->
-  <div class="b-example-divider"></div>
+   <!--Inicio de la barra de navegacion-->
+   <div class="b-example-divider"></div>
 
 <header class="p-3 text-bg-dark">
   <div class="container">
@@ -58,7 +58,6 @@
 </header>
 
 <!--fin de la barra de navegacion-->
-
 
     <table class="table" border="2">
         <thead>
@@ -105,7 +104,7 @@
 
     </table>
 
-    
+
   <!--Inicio del futer-->
   <div class="container">
     <footer class="py-5">
