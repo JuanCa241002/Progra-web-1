@@ -6,7 +6,8 @@
 -- Tiempo de generación: 12-12-2021 a las 08:41:10
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.9
-
+create database card;
+use  card;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -85,7 +86,9 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(100) NOT NULL,
   `clave` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
+ALTER TABLE usuarios
+ADD COLUMN apellido varchar(100) NOT NULL AFTER nombre,
+ADD COLUMN email varchar(100) NOT NULL AFTER apellido;
 --
 -- Volcado de datos para la tabla `usuarios`
 --

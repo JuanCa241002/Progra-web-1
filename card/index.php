@@ -4,6 +4,8 @@
 
 
 <?php require_once "config/conexion.php"; ?>
+ 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,8 +28,8 @@
 
 
 
-
-    <a href="#" class="btn-flotante" id="btnCarrito">Carrito <span class="badge bg-success" id="carrito">0</span></a>
+    
+<a href="#" class="btn-flotante" id="btnCarrito">Carrito <span class="badge bg-success" id="carrito">0</span></a>
     <!-- Navigation-->
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -50,9 +52,11 @@
                 <!-- Inicio para hacer login-->
             <div class="text-end">
                 <a href="login.php" class="btn btn-info">Login</a>
-                <a href="#" class="btn btn-warning">Sign-up</a>
+                <a href="reguistrologin.php" class="btn btn-warning">Sign-up</a>
                 </div>
-                <!--Fin para hacer login-->
+                <!-- Fin para hacer login-->
+
+
             </div>
         </nav>
     </div>

@@ -20,11 +20,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = mysqli_real_escape_string($conexion, $_POST['nombre']);
     $clave = mysqli_real_escape_string($conexion, $_POST['clave']);
 
+    $Apellido = mysqli_real_escape_string($conexion, $_POST['Apellido']);
+    $Email = mysqli_real_escape_string($conexion, $_POST['Email']);
+
     // Encriptar la contraseña
     $hashedPassword = password_hash($clave, PASSWORD_DEFAULT);
 
     // Insertar el usuario en la base de datos
-    $insertQuery = "INSERT INTO usuarios (usuario, nombre, clave) VALUES ('$usuario', '$nombre', '$hashedPassword')";
+    $insertQuery = "INSERT INTO usuarios (usuario, nombre, clave, Apellido, Email) VALUES ('$usuario', '$nombre', '$hashedPassword','$Apellido', '$Email' )";
     $result = mysqli_query($conexion, $insertQuery);
 
     if ($result) {
@@ -67,11 +70,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <label for="clave" class="form-label">Contraseña:</label>
                                 <input type="password" class="form-control" id="clave" name="clave" required>
                             </div>
+
+                            <div class="mb-3">
+                                <label for="Apellido" class="form-label">Apellido:</label>
+                                <input type="text" class="form-control" id="Apellido" name="Apellido" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Email" class="form-label">Email:</label>
+                                <input type="text" class="form-control" id="Email" name="Email" required>
+                            </div>
                             <button type="submit" class="btn btn-primary">Registrarse</button> <br>
                             
-                            <a class="small text-muted" href="#!">olvidaste tu contraseña?</a>
-                        <p class="mb-5 pb-lg-2" style="color: #393f81;">no tienes una cuenta? <a href="reguistrologin.php"
-                            style="color: #393f81;">reguistrate aqui</a></p>
                         <a href="#!" class="small text-muted">Terminos de uso.</a>
                         <a href="#!" class="small text-muted">politicas de privacidad/a>
                         </form>
