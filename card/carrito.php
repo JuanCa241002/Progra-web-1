@@ -65,18 +65,12 @@ require_once "config/config.php";
                 <div class="col-md-5 ms-auto">
                     <h4>Total a Pagar: <span id="total_pagar">0.00</span></h4>
                     <div class="d-grid gap-2">
-                        <div id="paypal-button-container"></div>
+                        
                         <button class="btn btn-warning" type="button" id="btnVaciar">Vaciar Carrito</button>
                     </div>
-                    
-                    <div class="d-grid gap-2">
-                        <div id="paypal-button-container"></div>
-                        <a href="https://wa.link/y1m9x8" class="btn btn-dark" type="button" id="btnVaciar">Pagar</a>
-                    </div>
-                    
                 </div>
-                
-                
+
+                <div class="d-grid">
             </div>
         </div>
     </section>
@@ -156,8 +150,6 @@ require_once "config/config.php";
                 }
             }
         }
-        
-        
     </script>
 </body>
 

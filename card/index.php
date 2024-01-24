@@ -1,3 +1,8 @@
+
+
+
+
+
 <?php require_once "config/conexion.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +23,10 @@
 </head>
 
 <body>
+
+
+
+
     <a href="#" class="btn-flotante" id="btnCarrito">Carrito <span class="badge bg-success" id="carrito">0</span></a>
     <!-- Navigation-->
     <div class="container">
@@ -38,6 +47,12 @@
                         <?php } ?>
                     </ul>
                 </div>
+                <!-- Inicio para hacer login-->
+            <div class="text-end">
+                <a href="login.php" class="btn btn-info">Login</a>
+                <a href="#" class="btn btn-warning">Sign-up</a>
+                </div>
+                <!--Fin para hacer login-->
             </div>
         </nav>
     </div>
@@ -61,7 +76,9 @@
                         <div class="col mb-5 productos" category="<?php echo $data['categoria']; ?>">
                             <div class="card h-100">
                                 <!-- Sale badge-->
-                                <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem"><?php echo ($data['precio_normal'] > $data['precio_rebajado']) ? 'Oferta' : ''; ?></div>
+                                <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem"><?php echo ($data['precio_normal'] > $data['precio_rebajado']) ? 'Oferton' : ''; ?></div>
+                                
+                                <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem"><?php echo ($data['precio_normal'] < $data['precio_rebajado']) ? 'paga 3 lleva 2' : ''; ?></div>
                                 <!-- Product image-->
                                 <img class="card-img-top" src="assets/img/<?php echo $data['imagen']; ?>" alt="..." />
                                 <!-- Product details-->
