@@ -48,7 +48,14 @@
                             <a href="#" class="nav-link" category="<?php echo $data['categoria']; ?>"><?php echo $data['categoria']; ?></a>
                         <?php } ?>
                     </ul>
+                
                 </div>
+                <!-- Inicio del filtro-->
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Filtrar..."
+                    aria-label="Search">
+                </form>
+                <!-- Fin del filtro-->
                 <!-- Inicio para hacer login-->
             <div class="text-end">
                 <a href="login.php" class="btn btn-info">Login</a>
