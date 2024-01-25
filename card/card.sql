@@ -90,10 +90,10 @@ CREATE TABLE `comentario` (
 --
 
 INSERT INTO `comentario` (`comentario_id`, `parent_comentario_id`, `comment`, `comment_sender_name`, `date`) VALUES
-(4, 0, 'Me fascina la programacion, muy interesante.', 'Luisa Maron', '2018-03-23 04:50:37'),
-(5, 0, 'Los lenguajes de programacion nos ayudan a crear plataformas de todo tipo', 'Claudia Guillen', '2018-03-23 05:09:48'),
-(6, 0, '  Excelente idea, muchas gracias ', 'Pedro Programador', '2022-04-26 05:36:39'),
-(7, 6, '  Por nada a la orden', 'Juan Programador', '2022-04-26 05:37:20');
+(4, 0, 'Me encanta el diseño de los dormitorios de verano', 'Luisa Maron', '2023-03-23 04:50:37'),
+(5, 0, 'sus sillas premiun correa son exelentes para un dia de churrasco', 'Claudia Guillen', '2023-03-23 05:09:48'),
+(6, 0, '  Excelente gustos, muchas gracias ', 'Pedro infante', '2022-04-26 05:36:39'),
+(7, 6, '  Por nada a la orden', 'Juan carlos', '2022-04-26 05:37:20');
 
 -- --------------------------------------------------------
 

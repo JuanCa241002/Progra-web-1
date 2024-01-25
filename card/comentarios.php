@@ -7,20 +7,20 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>comentarios</title>
-
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"> -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <meta charset="utf-8">
     <link href="css/estilos.css" rel="stylesheet" type="text/css" />
     <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
 
-    <!-- <link rel="stylesheet" href="..\assets\style\styles.css"> -->
-    <!-- <link rel="stylesheet" href="..\assets\style\style.css"> -->
+
+    <link rel="stylesheet" href="..\assets\style\styles.css">
+    <link rel="stylesheet" href="..\assets\style\style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="img/logotipo.jpg">
     <link rel="icon" type="image/png" sizes="32x32" href="img/logotipo.jpg">
     <link rel="icon" type="image/png" sizes="16x16" href="img/logotipo.jpg">
-    <!-- <link rel="manifest" href="\assets\img\site.webmanifest"> -->
+    <link rel="manifest" href="\assets\img\site.webmanifest">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -58,7 +58,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h4>comentarios(Me gusta, No me gusta)</h4>
+                <h4>dejanos una reseña acerca de nuestros servicios online</h4>
             </div>
         </div>
         <div class="row">
