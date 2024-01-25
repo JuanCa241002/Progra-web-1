@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Sistema de comentarios de PHP (Me gusta, No me gusta)</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>comentarios</title>
+
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -10,30 +15,50 @@
     <link href="css/estilos.css" rel="stylesheet" type="text/css" />
     <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
 
+    <!-- <link rel="stylesheet" href="..\assets\style\styles.css"> -->
+    <!-- <link rel="stylesheet" href="..\assets\style\style.css"> -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/logotipo.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logotipo.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logotipo.jpg">
+    <!-- <link rel="manifest" href="\assets\img\site.webmanifest"> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
 
 <body>
-    <nav class="navbar navbar-default">
+    <!-- INICIO Header -->
+    <header class="p-3 mb-3 border-bottom">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                <a class="navbar-brand" href="https://www.configuroweb.com/46-aplicaciones-gratuitas-en-php-python-y-javascript/#Aplicaciones-gratuitas-en-PHP,-Python-y-Javascript">ConfiguroWeb</a>
-            </div>
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <img src="assets/img/logotipo.jpg" alt="Logo" width="50" height="44"
+                    class="d-inline-block align-text-top">
+                <a href="img/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                        <use xlink:href="#bootstrap" />
+                    </svg>
+                </a>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="./">INICIO <span class="sr-only">(current)</span></a></li>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="home.html" class="nav-link px-2 link-secondary">home</a></li>
+                    <li><a href="index.php" class="nav-link px-2 link-body-emphasis">tienda</a></li>
+                    <li><a href="about.html" class="nav-link px-2 link-body-emphasis">Quienes somos</a></li>
+                    <li><a href="politicas.html" class="nav-link px-2 link-body-emphasis">politicas de privacidad</a></li>
+                    <li><a href="contacto.html" class="nav-link px-2 link-body-emphasis">contacto</a></li>  
+                    <li><a href="comentarios.html" class="nav-link px-2 link-body-emphasis">comentarios</a></li>
+
                 </ul>
+
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container-fluid -->
-    </nav>
+    </header>
+    <!-- FINHeader-->
+<!-- inicio de cuerpo de los comentarios-->
+
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h4>Sistema de comentarios PHP (Me gusta, No me gusta)</h4>
+                <h4>comentarios(Me gusta, No me gusta)</h4>
             </div>
         </div>
         <div class="row">
@@ -166,7 +191,7 @@
                                         like_icon += "<img style='display:none;' src='img/NoMeGusta.png' id='like_" + data[i]['comentario_id'] + "' class='like-unlike' onClick='likeOrDislike(" + data[i]['comentario_id'] + ",1)' />";
 
                                     } else {
-                                        like_icon = "<img style='display:none;' src='img/NoMeGusta.png'  id='unlike_" + data[i]['comentario_id'] + "' class='like-unlike'  onClick='likeOrDislike(" + data[i]['comentario_id'] + ",-1)' />";
+                                        like_icon = "<img style='display:none;' src='img/MeGusta.png'  id='unlike_" + data[i]['comentario_id'] + "' class='like-unlike'  onClick='likeOrDislike(" + data[i]['comentario_id'] + ",-1)' />";
                                         like_icon += "<img src='img/NoMeGusta.png' id='like_" + data[i]['comentario_id'] + "' class='like-unlike' onClick='likeOrDislike(" + data[i]['comentario_id'] + ",1)' />";
 
                                     }
@@ -252,12 +277,29 @@
             </div>
         </div>
     </div>
-    <div class="panel-footer">
-        <div class="container">
-            <p>Para más desarrollos <a href="https://www.configuroweb.com/46-aplicaciones-gratuitas-en-php-python-y-javascript/#Aplicaciones-gratuitas-en-PHP,-Python-y-Javascript" target="_blank">ConfiguroWeb</a></p>
-        </div>
-    </div>
+<!-- fin de cuerpo de los comentarios-->
 
+
+
+    <!-- Footer-->
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+        </ul>
+        <p class="text-center text-body-secondary">&copy; 2023 Company, Inc</p>
+    </footer>
+    <!-- fin Footer-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+        <script src="\js\bootstrap.min.js"></script>
 </body>
 
 </html>

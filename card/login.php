@@ -59,10 +59,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <input type="text" class="form-control" id="usuario" name="usuario" required>
                             </div>
                             <div class="mb-3">
-                                <label for="nombre" class="form-label">Nombre completo:</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" required>
-                            </div>
-                            <div class="mb-3">
                                 <label for="clave" class="form-label">Contraseña:</label>
                                 <input type="password" class="form-control" id="clave" name="clave" required>
                             </div>

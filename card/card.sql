@@ -74,6 +74,86 @@ CREATE TABLE `categorias` (
   PRIMARY KEY (`id`),
   CONSTRAINT `categorias_ibfk_1` FOREIGN KEY (`busqueda_id`) REFERENCES `busqueda` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+---- Estructura de tabla para la tabla `comentario`
+--
+
+CREATE TABLE `comentario` (
+  `comentario_id` int(11) NOT NULL,
+  `parent_comentario_id` int(11) DEFAULT NULL,
+  `comment` varchar(200) CHARACTER SET latin1 NOT NULL,
+  `comment_sender_name` varchar(40) CHARACTER SET latin1 NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabla Comentarios';
+
+--
+-- Volcado de datos para la tabla `comentario`
+--
+
+INSERT INTO `comentario` (`comentario_id`, `parent_comentario_id`, `comment`, `comment_sender_name`, `date`) VALUES
+(4, 0, 'Me fascina la programacion, muy interesante.', 'Luisa Maron', '2018-03-23 04:50:37'),
+(5, 0, 'Los lenguajes de programacion nos ayudan a crear plataformas de todo tipo', 'Claudia Guillen', '2018-03-23 05:09:48'),
+(6, 0, '  Excelente idea, muchas gracias ', 'Pedro Programador', '2022-04-26 05:36:39'),
+(7, 6, '  Por nada a la orden', 'Juan Programador', '2022-04-26 05:37:20');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `megusta_nomegusta`
+--
+
+CREATE TABLE `megusta_nomegusta` (
+  `id` int(11) NOT NULL,
+  `member_id` int(11) NOT NULL,
+  `comentario_id` int(11) NOT NULL,
+  `like_unlike` int(2) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `megusta_nomegusta`
+--
+
+INSERT INTO `megusta_nomegusta` (`id`, `member_id`, `comentario_id`, `like_unlike`, `date`) VALUES
+(2, 1, 3, 1, '2018-03-22 23:09:56'),
+(3, 1, 5, 1, '2018-03-22 23:09:52'),
+(4, 1, 4, 1, '2018-03-22 23:09:53'),
+(5, 1, 6, 1, '2022-04-25 22:37:04'),
+(6, 1, 7, 1, '2022-04-25 22:37:26');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD PRIMARY KEY (`comentario_id`);
+
+--
+-- Indices de la tabla `megusta_nomegusta`
+--
+ALTER TABLE `megusta_nomegusta`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  MODIFY `comentario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de la tabla `megusta_nomegusta`
+--
+ALTER TABLE `megusta_nomegusta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+COMMIT;
+-- FIN COMENTARIO
+
 
 INSERT INTO `categorias` (`id`, `categoria`) VALUES
 (1, 'Tecnologia'),
