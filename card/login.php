@@ -1,9 +1,33 @@
+<?php
+require_once "config/conexion.php"; // Asegúrate de proporcionar la ruta correcta al archivo de conexión
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Procesar y validar los datos del formulario  
+    $usuario = mysqli_real_escape_string($conexion, $_POST['usuario']);
+    $nombre = mysqli_real_escape_string($conexion, $_POST['nombre']);
+    $clave = mysqli_real_escape_string($conexion, $_POST['clave']);
+
+    // Verificar si el usuario existe en la base de datos
+    $checkQuery = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND nombre = '$nombre' AND clave = '$clave'";
+    $checkResult = mysqli_query($conexion, $checkQuery);
+
+    if (mysqli_num_rows($checkResult) > 0) {
+        // Los datos coinciden, redirigir a index.php
+        header("Location: index.php");
+        exit();
+    } else {
+        // Los datos no coinciden, mostrar un mensaje de error
+        echo "Error: Los datos ingresados no son válidos.";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rguistro</title>
+    <title>login</title>
     <!--avajo enlace para framework boostrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <!--arriba enlace para framework boostrap-->
@@ -11,32 +35,7 @@
 <body class="bg-light">
     
     
-<?php
-require_once "config/conexion.php"; // Asegúrate de proporcionar la ruta correcta al archivo de conexión
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Procesar y validar los datos del formulario
-    $usuario = mysqli_real_escape_string($conexion, $_POST['usuario']);
-    $nombre = mysqli_real_escape_string($conexion, $_POST['nombre']);
-    $clave = mysqli_real_escape_string($conexion, $_POST['clave']);
-
-    // Encriptar la contraseña
-    $hashedPassword = password_hash($clave, PASSWORD_DEFAULT);
-
-    // Insertar el usuario en la base de datos
-    $insertQuery = "INSERT INTO usuarios (usuario, nombre, clave) VALUES ('$usuario', '$nombre', '$hashedPassword')";
-    $result = mysqli_query($conexion, $insertQuery);
-
-    if ($result) {
-        // Registro exitoso, redirigir a index.php
-        header("Location: index.php");
-        exit();
-    } else {
-        // Error al insertar en la base de datos, puedes manejar el error de la manera que prefieras
-        echo "Error al registrar el usuario: " . mysqli_error($conexion);
-    }
-}
-?>
     <section class="vh-100" style="background-color: #9A616D;">
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
@@ -67,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <label for="clave" class="form-label">Contraseña:</label>
                                 <input type="password" class="form-control" id="clave" name="clave" required>
                             </div>
-                            <button type="submit" class="btn btn-primary">Registrarse</button> <br>
+                            <button type="submit" class="btn btn-primary">ingresar</button> <br>
                             
                             <a class="small text-muted" href="#!">olvidaste tu contraseña?</a>
                         <p class="mb-5 pb-lg-2" style="color: #393f81;">no tienes una cuenta? <a href="reguistrologin.php"

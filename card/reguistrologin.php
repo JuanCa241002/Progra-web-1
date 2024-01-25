@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rguistro</title>
+    <title>Registro</title>
     <!--avajo enlace para framework boostrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <!--arriba enlace para framework boostrap-->
 </head>
 <body class="bg-light">
-    
-    
+      
+      
 <?php
 require_once "config/conexion.php"; // Asegúrate de proporcionar la ruta correcta al archivo de conexión
 
@@ -20,14 +20,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = mysqli_real_escape_string($conexion, $_POST['nombre']);
     $clave = mysqli_real_escape_string($conexion, $_POST['clave']);
 
-    $Apellido = mysqli_real_escape_string($conexion, $_POST['Apellido']);
-    $Email = mysqli_real_escape_string($conexion, $_POST['Email']);
+    $Apellido = mysqli_real_escape_string($conexion, $_POST['apellido']);
+    $Email = mysqli_real_escape_string($conexion, $_POST['email']);
 
     // Encriptar la contraseña
     $hashedPassword = password_hash($clave, PASSWORD_DEFAULT);
 
     // Insertar el usuario en la base de datos
-    $insertQuery = "INSERT INTO usuarios (usuario, nombre, clave, Apellido, Email) VALUES ('$usuario', '$nombre', '$hashedPassword','$Apellido', '$Email' )";
+    $insertQuery = "INSERT INTO usuarios (usuario, nombre, clave, apellido, email) VALUES ('$usuario', '$nombre', '$hashedPassword','$Apellido', '$Email' )";
     $result = mysqli_query($conexion, $insertQuery);
 
     if ($result) {

@@ -2,7 +2,6 @@
 
 
 
-
 <?php require_once "config/conexion.php"; ?>
  
 
@@ -15,6 +14,11 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Carrito de Compras</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/logotipo.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logotipo.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logotipo.jpg">
+    <link rel="manifest" href="img/logotipo.jpg">
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
@@ -36,6 +40,9 @@
             <div class="container-fluid">
             <img src="assets/img/logotipo.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
                 <a class="navbar-brand" href="#">MUEBLES INTI</a>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="home.html" class="nav-link px-2 text-secondary">Home</a></li>     
+            </ul>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -51,10 +58,9 @@
                 
                 </div>
                 <!-- Inicio del filtro-->
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Filtrar..."
-                    aria-label="Search">
-                </form>
+                <form id="formFiltrar" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                     <input id="inputFiltrar" type="search" class="form-control form-control-dark text-bg-dark" placeholder="Filtrar..." aria-label="Search">
+                        </form>
                 <!-- Fin del filtro-->
                 <!-- Inicio para hacer login-->
             <div class="text-end">
@@ -134,6 +140,37 @@
     <!-- Core theme JS-->
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/scripts.js"></script>
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+
+<script>
+    $(document).ready(function () {
+        // Obtener todos los elementos de la tarjeta al cargar la página
+        var productos = $(".productos");
+
+        // Manejar el evento de cambio en el campo de búsqueda
+        $("#inputFiltrar").on("input", function () {
+            var filtro = $(this).val().toLowerCase(); // Obtener el valor del campo de búsqueda en minúsculas
+
+            // Filtrar los elementos de la tarjeta según el nombre ingresado
+            productos.each(function () {
+                var nombreProducto = $(this).find(".fw-bolder").text().toLowerCase();
+                if (nombreProducto.includes(filtro)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
+    });
+</script>
+
 </body>
 
 </html>

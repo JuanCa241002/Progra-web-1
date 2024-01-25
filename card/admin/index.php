@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if (!empty($_SESSION['active'])) {
     header('location: productos.php');
 } else {
@@ -16,16 +17,28 @@ if (!empty($_SESSION['active'])) {
             require_once "../config/conexion.php";
             $user = mysqli_real_escape_string($conexion, $_POST['usuario']);
             $clave = md5(mysqli_real_escape_string($conexion, $_POST['clave']));
-            $query = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario = '$user' AND clave = '$clave'");
-            mysqli_close($conexion);
+            $query = mysqli_query($conexion, "SELECT * FROM adm WHERE usuario = '$user' AND clave = '$clave'");
+
+            
+            
             $resultado = mysqli_num_rows($query);
             if ($resultado > 0) {
                 $dato = mysqli_fetch_array($query);
-                $_SESSION['active'] = true;
-                $_SESSION['id'] = $dato['id'];
-                $_SESSION['nombre'] = $dato['nombre'];
-                $_SESSION['user'] = $dato['usuario'];
-                header('Location: productos.php');
+                
+                // Check the user's role
+                if ($dato['usuario'] == 'adm') {
+                    $_SESSION['active'] = true;
+                    $_SESSION['id'] = $dato['id'];
+                    $_SESSION['nombre'] = $dato['nombre'];
+                    $_SESSION['user'] = $dato['usuario'];
+                    header('Location: productos.php');
+                } else {
+                    $_SESSION['active'] = true;
+                    $_SESSION['id'] = $dato['id'];
+                    $_SESSION['nombre'] = $dato['nombre'];
+                    $_SESSION['user'] = $dato['usuario'];
+                    header('Location: trabajadores.php');
+                }
             } else {
                 $alert = '<div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
                         Contraseña incorrecta
@@ -35,10 +48,15 @@ if (!empty($_SESSION['active'])) {
                     </div>';
                 session_destroy();
             }
+            
+            mysqli_close($conexion);
         }
     }
 }
 ?>
+
+<!-- Rest of your HTML code remains unchanged -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,7 +99,7 @@ if (!empty($_SESSION['active'])) {
                                             <input type="password" class="form-control form-control-user" id="clave" name="clave" placeholder="Password">
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
-                                            iniciar
+                                            login
                                         </button>
                                         <hr>
                                     </form>

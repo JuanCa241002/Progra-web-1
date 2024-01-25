@@ -31,11 +31,23 @@ if (empty($_SESSION['id'])) {
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-           
+            <!-- Sidebar - Brand -->   
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Tienda <sup>Online</sup></div>
+            </a>
+
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-            
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Menús</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -51,11 +63,24 @@ if (empty($_SESSION['id'])) {
                     <i class="fas fa-list"></i>
                     <span>Productos</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="registro.php">
+                    <i class="fas fa-user"></i>
+                    <span>Registro Trabajadores</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="usuarios.php">
+                    <i class="fas fa-user"></i>
+                    <span>Usuarios Trabajadores</span></a>   
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
-           
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
 
         </ul>
         <!-- End of Sidebar -->
@@ -97,7 +122,25 @@ if (empty($_SESSION['id'])) {
                             </div>
                         </li>
                         <!-- Nav Item - User Information -->
-                        
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['nombre']; ?></span>
+                                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="../salir.php">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Salir
+                                </a>
+                            </div>
+                        </li>
+
                     </ul>
 
                 </nav>
