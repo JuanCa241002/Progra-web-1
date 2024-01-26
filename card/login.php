@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body class="bg-light">
     
     
-
+<!-- form para login -->
     <section class="vh-100" style="background-color: #9A616D;">
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
@@ -62,8 +62,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <label for="clave" class="form-label">Contraseña:</label>
                                 <input type="password" class="form-control" id="clave" name="clave" required>
                             </div>
-                            <button type="submit" class="btn btn-primary">ingresar</button> <br>
-                            
+                            <!-- <button type="submit" class="btn btn-primary">ingresar</button> <br> -->
+                            <button onclick="window.location.href='index.php'" type="button" class="btn btn-primary">Ingresar</button> 
+
                             <a class="small text-muted" href="#!">olvidaste tu contraseña?</a>
                         <p class="mb-5 pb-lg-2" style="color: #393f81;">no tienes una cuenta? <a href="reguistrologin.php"
                             style="color: #393f81;">reguistrate aqui</a></p>
