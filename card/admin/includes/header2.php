@@ -34,7 +34,8 @@ if (empty($_SESSION['id'])) {
             <!-- Sidebar - Brand -->   
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <i href="" class="fas fa-laugh-wink"></i>                 
+                    <!-- <a href="index.php" class="fas fa-laugh-wink"></a> -->
                 </div>
                 <div class="sidebar-brand-text mx-3">Tienda <sup>Online</sup></div>
             </a>

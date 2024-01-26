@@ -65,7 +65,9 @@ require_once "config/config.php";
                 <div class="col-md-5 ms-auto">
                     <h4>Total a Pagar: <span id="total_pagar">0.00</span></h4>
                     <div class="d-grid gap-2">
-                        <button class="btn btn-success" type="button" id="btnComprar">Comprar</button>
+<!--INICIO modificar par reenviar a una facturando  -->
+                        <a href="tarjeta.html" type="button" id="btnComprar">Comprar</a>
+<!--FIN modificar par reenviar a una facturando  -->
                         <button class="btn btn-warning" type="button" id="btnVaciar">Vaciar Carrito</button>
                     </div>
                 </div>
