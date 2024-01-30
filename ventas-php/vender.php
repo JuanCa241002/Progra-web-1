@@ -80,7 +80,12 @@ $clienteSeleccionado = (isset($_SESSION['clienteVenta'])) ? obtenerClientePorId(
             <h1>Total: $<?php echo $total;?></h1>
             <a  class="btn btn-primary btn-lg" href="registrar_venta.php">  
                 <i class="fa fa-check"></i> 
-                Terminar venta 
+                Terminar venta   
+                <!-- Inicio Generar factura -->
+                <a class="btn btn-secondary btn-lg" href="generar_factura_pdf.php" target="_blank">
+                <i class="fa fa-file-pdf"></i> Generar Factura PDF
+                </a>
+                <!-- Fin Generar factura -->
             </a>
             <a class="btn btn-danger btn-lg" href="cancelar_venta.php">
                 <i class="fa fa-times"></i> 
@@ -90,3 +95,4 @@ $clienteSeleccionado = (isset($_SESSION['clienteVenta'])) ? obtenerClientePorId(
     </div>
     <?php }?>
 </div>
+
